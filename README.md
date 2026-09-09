@@ -17,7 +17,7 @@ A modern, highly interactive web application representing the CleverTeam agency.
 ![GSAP](https://img.shields.io/badge/GSAP-88CE02?style=for-the-badge&logo=greensock&logoColor=white)
 ![Threejs](https://img.shields.io/badge/threejs-black?style=for-the-badge&logo=three.js&logoColor=white)
 
-## Getting Started 🛠️
+## Getting Started
 
 Follow these instructions to set up the project locally:
 
@@ -37,7 +37,7 @@ Run the project locally:
 npm run dev
 ```
 
-## Features ✨
+## Features
 * Stunning 3D interactive graphics.
 * Smooth, high-performance scroll animations.
 * Fully responsive design tailored for all devices.
