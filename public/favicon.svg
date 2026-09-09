@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 105 105" width="105" height="105">
+  <g transform="translate(0, 0)">
+    <path d="M 50 50 L 25 50 A 25 25 0 0 1 0 25 A 25 25 0 0 1 25 0 A 25 25 0 0 1 50 25 Z" fill="#8DC63F" />
+  </g>
+  <g transform="translate(55, 0)">
+    <path d="M 0 50 L 0 25 A 25 25 0 0 1 25 0 A 25 25 0 0 1 50 25 A 25 25 0 0 1 25 50 Z" fill="#37B264" />
+  </g>
+  <g transform="translate(0, 55)">
+    <path d="M 50 0 L 50 25 A 25 25 0 0 1 25 50 A 25 25 0 0 1 0 25 A 25 25 0 0 1 25 0 Z" fill="#B2D235" />
+  </g>
+  <g transform="translate(55, 55)">
+    <path d="M 0 0 L 25 0 A 25 25 0 0 1 50 25 A 25 25 0 0 1 25 50 A 25 25 0 0 1 0 25 Z" fill="#37B264" />
+  </g>
+</svg>
