@@ -50,7 +50,7 @@ export default function PartnersGrid() {
           </p>
         </div>
 
-        <div className="grid grid-cols-6 max-[900px]:grid-cols-4 max-[600px]:grid-cols-3 gap-[1px] bg-[#DDDDDD] border border-[#DDDDDD]">
+        <div className="grid grid-cols-6 max-[900px]:grid-cols-4 max-[600px]:grid-cols-3 gap-4">
           {Array.from({ length: NUM_PARTNERS }).map((_, index) => {
             const isLast = index === NUM_PARTNERS - 1;
 
@@ -58,30 +58,31 @@ export default function PartnersGrid() {
               <div
                 key={index}
                 ref={(el) => { cellRefs.current[index] = el; }}
-                className={`flex items-center justify-center px-[20px] py-[28px] h-[110px] bg-[#FFFFFF] hover:bg-[#F1F8E9] transition-colors duration-200 group ${isLast ? 'cursor-pointer' : 'cursor-default'}`}
               >
-                {isLast ? (
-                  <a
-                    href="#contacts"
-                    onClick={(e) => {
-                      e.preventDefault();
-                      document.getElementById('contacts')?.scrollIntoView({ behavior: 'smooth' });
-                    }}
-                    className="flex flex-col items-center justify-center no-underline w-full h-full"
-                  >
-                    <span className="text-[28px] font-[900] text-[#7CB342] leading-[1]">?</span>
-                    <span className="text-[11px] font-[700] text-[#7CB342] mt-[4px] uppercase tracking-[0.06em]">Можливо Ви</span>
-                  </a>
-                ) : (
-                  <img
-                    src={getLogoUrl(index)}
-                    alt={`Партнер ${index + 1}`}
-                    className="max-w-[110px] max-h-[55px] object-contain grayscale-[0.4] opacity-85 transition-all duration-[250ms] ease-out group-hover:grayscale-0 group-hover:opacity-100"
-                    onError={(e) => {
-                      (e.currentTarget as HTMLImageElement).style.display = 'none';
-                    }}
-                  />
-                )}
+                <div className={`flex items-center justify-center px-5 py-7 h-[110px] bg-white rounded-lg shadow-sm transition-all duration-300 ease-out group hover:shadow-md hover:-translate-y-1 ${isLast ? 'cursor-pointer' : 'cursor-default'} w-full`}>
+                  {isLast ? (
+                    <a
+                      href="#contacts"
+                      onClick={(e) => {
+                        e.preventDefault();
+                        document.getElementById('contacts')?.scrollIntoView({ behavior: 'smooth' });
+                      }}
+                      className="flex flex-col items-center justify-center no-underline w-full h-full"
+                    >
+                      <span className="text-[28px] font-[900] text-[#7CB342] leading-[1]">?</span>
+                      <span className="text-[11px] font-[700] text-[#7CB342] mt-[4px] uppercase tracking-[0.06em]">Можливо Ви</span>
+                    </a>
+                  ) : (
+                    <img
+                      src={getLogoUrl(index)}
+                      alt={`Партнер ${index + 1}`}
+                      className="max-w-[110px] max-h-[55px] object-contain grayscale opacity-85 transition-all duration-300 ease-out group-hover:grayscale-0 group-hover:opacity-100"
+                      onError={(e) => {
+                        (e.currentTarget as HTMLImageElement).style.display = 'none';
+                      }}
+                    />
+                  )}
+                </div>
               </div>
             );
           })}
