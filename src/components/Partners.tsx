@@ -41,11 +41,11 @@ export default function PartnersGrid() {
       className="bg-[#F5F7F5] px-[64px] py-[80px] border-t border-[#DDDDDD]"
     >
       <div className="max-w-[1200px] mx-auto">
-        <div className="text-center mb-[48px]">
-          <h2 className="text-[clamp(24px,3vw,36px)] font-[800] text-[#1A1A1A] m-0 heading-underline-center">
-            Наші Партнери
+        <div className="mb-[64px] text-right">
+          <h2 className="font-['Archivo',sans-serif] text-[clamp(32px,4vw,54px)] font-[800] text-[#0A0A0A] leading-[1.1] tracking-[-0.02em] mb-[24px]">
+            Наші партнери
           </h2>
-          <p className="mt-[16px] text-[15px] text-[#555555] m-0">
+          <p className="font-mono text-[14px] text-[#888888] leading-[1.7] max-w-2xl ml-auto">
             Компанії, довіра яких — наша величезна перемога.
           </p>
         </div>

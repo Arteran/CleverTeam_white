@@ -90,7 +90,7 @@ export default function Hero() {
           <div className="flex items-center gap-[16px] mb-[40px]">
             <div className="w-[48px] h-[1px] bg-[#8DC63F]" />
             <span className="text-[12px] font-mono font-[700] tracking-[0.2em] text-[#8DC63F] uppercase">
-              Мультимодальна логістика
+              CLEVER TEAM
             </span>
           </div>
 
