@@ -7,6 +7,9 @@ export default {
   ],
   theme: {
     extend: {
+      transitionTimingFunction: {
+        'emil': 'cubic-bezier(0.23, 1, 0.32, 1)',
+      },
       colors: {
         'clever-green': '#8DC63F',
         'clever-green-dark': '#7CB342',

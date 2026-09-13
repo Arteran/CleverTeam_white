@@ -15,7 +15,7 @@ export default function Vacancies() {
             </span>
           </div>
 
-          <h2 className="font-['Archivo',sans-serif] text-[clamp(50px,8vw,110px)] font-[900] text-[#0A0A0A] leading-[0.9] tracking-[-0.02em] m-0">
+          <h2 className="font-['Archivo',sans-serif] text-[clamp(50px,8vw,110px)] font-[900] text-[#0A0A0A] leading-[0.9] tracking-[-0.04em] m-0">
             ПРАЦЮЙ<br />З КРАЩИМИ.
           </h2>
         </div>
@@ -25,7 +25,7 @@ export default function Vacancies() {
             href={CONTACT.vacanciesUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-block bg-transparent text-[#0A0A0A] hover:bg-[#0A0A0A] hover:text-[#FFFFFF] font-[800] font-['Inter',sans-serif] text-[13px] tracking-[0.05em] uppercase px-[40px] py-[18px] border-2 border-[#0A0A0A] no-underline transition-all duration-200"
+            className="inline-block bg-transparent text-[#0A0A0A] hover:bg-[#0A0A0A] hover:text-[#FFFFFF] font-[800] font-['Inter',sans-serif] text-[13px] tracking-[0.05em] uppercase px-[40px] py-[18px] border-2 border-[#0A0A0A] no-underline transition-all duration-200 active:scale-[0.97]"
           >
             Усі Вакансії
           </a>

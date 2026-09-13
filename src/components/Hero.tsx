@@ -59,9 +59,9 @@ export default function Hero() {
     });
   };
 
-  const w = 380;
-  const h = 280;
-  const d = 280;
+  const boxWidth = 380;
+  const boxHeight = 280;
+  const boxDepth = 280;
 
   const faceStyle = (width: number, height: number, transform: string, bg: string): React.CSSProperties => ({
     position: 'absolute',
@@ -81,7 +81,7 @@ export default function Hero() {
       className="w-full min-h-[calc(100vh-72px)] bg-[#FFFFFF] flex items-stretch border-b border-[#E5E5E5]"
     >
       <div
-        className="max-w-[1600px] mx-auto w-full grid grid-cols-[1.2fr_1fr] border-x border-[#E5E5E5] max-[1024px]:grid-cols-1 max-[1024px]:border-x-0"
+        className="max-w-[1600px] mx-auto w-full grid grid-cols-[1.6fr_1fr] border-x border-[#E5E5E5] max-[1024px]:grid-cols-1 max-[1024px]:border-x-0"
       >
         <div 
           ref={leftColRef}
@@ -94,7 +94,7 @@ export default function Hero() {
             </span>
           </div>
 
-          <h1 className="font-['Archivo',sans-serif] text-[clamp(60px,8vw,130px)] font-[900] leading-[0.9] tracking-[-0.03em] m-0 mb-[40px] text-[#0A0A0A] uppercase">
+          <h1 className="font-['Archivo',sans-serif] text-[clamp(60px,8vw,130px)] font-[900] leading-[0.9] tracking-[-0.04em] m-0 mb-[40px] text-[#0A0A0A]">
             Глобальний<br />
             Рух<span className="text-[#8DC63F]">.</span>
           </h1>
@@ -107,14 +107,14 @@ export default function Hero() {
           <div className="flex gap-[20px] flex-wrap">
             <button
               onClick={() => scrollTo('contacts')}
-              className="text-[13px] font-[800] tracking-[0.05em] py-[20px] px-[48px] border-none cursor-pointer font-['Inter',sans-serif] uppercase bg-[#0A0A0A] text-[#FFFFFF] transition-colors duration-200 hover:bg-[#8DC63F]"
+              className="text-[13px] font-[800] tracking-[0.05em] py-[20px] px-[48px] border-none cursor-pointer font-['Inter',sans-serif] uppercase bg-[#0A0A0A] text-[#FFFFFF] transition-[background-color,transform] duration-150 ease-emil hover:bg-[#8DC63F] active:scale-[0.97]"
             >
               Залишити заявку
             </button>
 
             <button
               onClick={() => scrollTo('about')}
-              className="text-[13px] tracking-[0.05em] py-[18px] px-[48px] cursor-pointer font-['Inter',sans-serif] uppercase bg-transparent text-[#0A0A0A] border border-[#E5E5E5] transition-colors duration-200 hover:border-[#0A0A0A]"
+              className="text-[13px] font-[600] tracking-[0.02em] py-[18px] px-[48px] cursor-pointer font-['Inter',sans-serif] bg-transparent text-[#0A0A0A] border border-[#E5E5E5] transition-[border-color,transform] duration-150 ease-emil hover:border-[#0A0A0A] active:scale-[0.97]"
             >
               Про компанію
             </button>
@@ -133,7 +133,7 @@ export default function Hero() {
             style={{ transform: 'rotateX(-12deg) rotateY(-25deg)' }}
           >
             <div 
-              style={{ ...faceStyle(w, h, `translateZ(${d/2}px)`, '#CFA87D') }}
+              style={{ ...faceStyle(boxWidth, boxHeight, `translateZ(${boxDepth/2}px)`, '#CFA87D') }}
               className="p-[24px] box-border flex flex-col justify-center shadow-[inset_0_0_40px_rgba(0,0,0,0.03)] border border-[rgba(0,0,0,0.05)]"
             >
                <div className="border-[3px] border-[#1A1A1A] p-[20px] text-center mb-[24px]">
@@ -150,9 +150,9 @@ export default function Hero() {
                </div>
             </div>
 
-            <div style={{ ...faceStyle(w, h, `translateZ(${-d/2}px) rotateY(180deg)`, '#B78B5D') }} className="border border-[rgba(0,0,0,0.05)]" />
+            <div style={{ ...faceStyle(boxWidth, boxHeight, `translateZ(${-boxDepth/2}px) rotateY(180deg)`, '#B78B5D') }} className="border border-[rgba(0,0,0,0.05)]" />
 
-            <div style={{ ...faceStyle(d, h, `translateX(${w/2}px) rotateY(90deg)`, '#B78B5D') }} className="border border-[rgba(0,0,0,0.05)]">
+            <div style={{ ...faceStyle(boxDepth, boxHeight, `translateX(${boxWidth/2}px) rotateY(90deg)`, '#B78B5D') }} className="border border-[rgba(0,0,0,0.05)]">
               <div className="absolute top-[50px] left-[40px] w-[80px] h-[130px] bg-[#FFFFFF] rotate-[4deg] p-[8px] shadow-[1px_2px_4px_rgba(0,0,0,0.1)] flex flex-col">
                 <div className="font-[900] text-[10px] mb-[6px] font-['Inter',sans-serif] text-[#000]">PRIORITY</div>
                 <div className="w-full h-[2px] bg-[#E0E0E0] mb-[3px]"></div>
@@ -162,10 +162,10 @@ export default function Hero() {
               </div>
             </div>
 
-            <div style={{ ...faceStyle(d, h, `translateX(${-w/2}px) rotateY(-90deg)`, '#B78B5D') }} className="border border-[rgba(0,0,0,0.05)]" />
+            <div style={{ ...faceStyle(boxDepth, boxHeight, `translateX(${-boxWidth/2}px) rotateY(-90deg)`, '#B78B5D') }} className="border border-[rgba(0,0,0,0.05)]" />
 
             <div 
-              style={{ ...faceStyle(w, d, `translateY(${-h/2}px) rotateX(90deg)`, '#E0BF93') }}
+              style={{ ...faceStyle(boxWidth, boxDepth, `translateY(${-boxHeight/2}px) rotateX(90deg)`, '#E0BF93') }}
               className="shadow-[inset_0_0_30px_rgba(255,255,255,0.2)] border border-[rgba(0,0,0,0.05)]"
             >
               <div className="absolute bottom-[24px] right-[24px] border-[3px] border-[#C44D4D] text-[#C44D4D] px-[12px] py-[6px] font-['Inter',sans-serif] font-[900] text-[20px] tracking-[2px] rotate-[-12deg] opacity-[0.85]">
@@ -174,7 +174,7 @@ export default function Hero() {
             </div>
 
             <div 
-              style={{ ...faceStyle(w, d, `translateY(${h/2}px) rotateX(-90deg)`, '#946E47') }}
+              style={{ ...faceStyle(boxWidth, boxDepth, `translateY(${boxHeight/2}px) rotateX(-90deg)`, '#946E47') }}
               className="shadow-[0_0_60px_20px_rgba(0,0,0,0.15)] border border-[rgba(0,0,0,0.05)]" 
             />
 

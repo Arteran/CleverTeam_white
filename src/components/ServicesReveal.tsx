@@ -103,8 +103,8 @@ export function ServicesReveal() {
       className="bg-[#FFFFFF] px-[64px] py-[80px]"
     >
       <div className="max-w-[1200px] mx-auto">
-        <div className="text-center mb-[64px]">
-          <h2 className="text-[clamp(24px,3vw,36px)] font-[800] text-[#1A1A1A] m-0 mb-[16px] heading-underline-center">
+        <div className="text-center mb-[32px]">
+          <h2 className="text-[clamp(24px,3vw,36px)] font-[800] text-[#1A1A1A] m-0 mb-[16px] heading-underline-center tracking-[-0.02em]">
             Послуги Компанії
           </h2>
           <p className="text-[15px] text-[#555555] max-w-[680px] mx-auto mt-[16px] leading-[1.75]">
@@ -122,16 +122,19 @@ export function ServicesReveal() {
             >
               <a
                 href={service.href}
-                className="flex flex-col items-center text-center no-underline px-[16px] py-[32px] rounded-[8px] border border-[#EEEEEE] hover:border-[#7CB342] transition-all duration-[250ms] ease-out cursor-pointer bg-[#FFFFFF] hover:bg-[#F9FCF4] hover:-translate-y-[4px] hover:shadow-[0_8px_24px_rgba(124,179,66,0.18)] group w-full h-full"
+                className="flex flex-col items-center text-center no-underline px-[16px] py-[40px] rounded-[16px] border border-[#EEEEEE] shadow-[0_2px_12px_rgba(0,0,0,0.04)] transition-[transform,background-color,border-color,box-shadow,color] duration-200 ease-emil cursor-pointer bg-[#FFFFFF] hover:bg-[#8DC63F] hover:-translate-y-[6px] hover:shadow-[0_16px_40px_rgba(141,198,63,0.3)] hover:border-[#8DC63F] active:scale-[0.97] group w-full h-full"
               >
-                <div
-                  className="w-[90px] h-[90px] rounded-full border-2 border-[#DDDDDD] bg-[#FFFFFF] flex items-center justify-center mb-[20px] text-[#7CB342] transition-all duration-[250ms] ease-out shrink-0 group-hover:bg-[#7CB342] group-hover:border-[#7CB342] group-hover:text-[#FFFFFF]"
-                >
-                  {shapes[service.slug] ?? shapes.customs}
+                <div className="relative w-[84px] h-[84px] mb-[24px] shrink-0 flex items-center justify-center">
+                  <div
+                    className="absolute inset-0 rounded-tl-full rounded-tr-full rounded-bl-full rounded-br-none bg-[#F4F9EE] transition-[background-color,transform,box-shadow] duration-[400ms] ease-emil group-hover:bg-[#FFFFFF] group-hover:shadow-[0_8px_24px_rgba(0,0,0,0.15)] group-hover:rotate-[270deg] group-hover:scale-105"
+                  />
+                  <div className="relative z-10 text-[#7CB342] transition-colors duration-200 ease-emil group-hover:text-[#8DC63F]">
+                    {shapes[service.slug] ?? shapes.customs}
+                  </div>
                 </div>
 
                 <span
-                  className="text-[14px] font-[600] text-[#1A1A1A] leading-[1.4] transition-colors duration-[250ms] ease-out group-hover:text-[#558B2F]"
+                  className="text-[15px] font-[700] text-[#1A1A1A] leading-[1.4] transition-colors duration-200 ease-emil group-hover:text-[#FFFFFF]"
                 >
                   {service.name}
                 </span>

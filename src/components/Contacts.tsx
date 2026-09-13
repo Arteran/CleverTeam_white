@@ -62,7 +62,7 @@ function LeadForm() {
 
   const Field = ({ label, error, children }: { label: string; error?: string; children: React.ReactNode }) => (
     <div>
-      <label className="block text-[12px] font-[600] text-[#555555] mb-[6px] uppercase tracking-[0.04em]">
+      <label className="block text-[13px] font-[600] text-[#444444] mb-[6px] tracking-[0.02em]">
         {label}
       </label>
       {children}
@@ -76,13 +76,13 @@ function LeadForm() {
     >
       <Field label="Ваше ім'я" error={errors.name}>
         <input name="name" type="text" placeholder="Іван Іваненко" value={form.name} onChange={handleChange}
-          className={`w-full bg-[#FAFAFA] border rounded-[4px] text-[#1A1A1A] font-inherit text-[14px] px-[14px] py-[11px] outline-none transition-colors duration-200 focus:border-[#7CB342] ${errors.name ? 'border-[#E53935]' : 'border-[#DDDDDD]'}`}
+          className={`w-full bg-[#FAFAFA] border rounded-[4px] text-[#1A1A1A] font-inherit text-[14px] px-[14px] py-[11px] outline-none transition-colors duration-150 ease-emil focus:border-[#7CB342] ${errors.name ? 'border-[#E53935]' : 'border-[#DDDDDD]'}`}
         />
       </Field>
 
       <Field label="Телефон / WhatsApp" error={errors.phone}>
         <input name="phone" type="tel" placeholder="+38 (0__) ___ __ __" value={form.phone} onChange={handleChange}
-          className={`w-full bg-[#FAFAFA] border rounded-[4px] text-[#1A1A1A] font-inherit text-[14px] px-[14px] py-[11px] outline-none transition-colors duration-200 focus:border-[#7CB342] ${errors.phone ? 'border-[#E53935]' : 'border-[#DDDDDD]'}`}
+          className={`w-full bg-[#FAFAFA] border rounded-[4px] text-[#1A1A1A] font-inherit text-[14px] px-[14px] py-[11px] outline-none transition-colors duration-150 ease-emil focus:border-[#7CB342] ${errors.phone ? 'border-[#E53935]' : 'border-[#DDDDDD]'}`}
         />
       </Field>
 
@@ -107,13 +107,13 @@ function LeadForm() {
 
       <Field label="Маршрут" error={errors.route}>
         <input name="route" type="text" placeholder="Одеса → Китай" value={form.route} onChange={handleChange}
-          className={`w-full bg-[#FAFAFA] border rounded-[4px] text-[#1A1A1A] font-inherit text-[14px] px-[14px] py-[11px] outline-none transition-colors duration-200 focus:border-[#7CB342] ${errors.route ? 'border-[#E53935]' : 'border-[#DDDDDD]'}`}
+          className={`w-full bg-[#FAFAFA] border rounded-[4px] text-[#1A1A1A] font-inherit text-[14px] px-[14px] py-[11px] outline-none transition-colors duration-150 ease-emil focus:border-[#7CB342] ${errors.route ? 'border-[#E53935]' : 'border-[#DDDDDD]'}`}
         />
       </Field>
 
       <div className="col-span-full">
         <button type="submit" disabled={busy}
-          className={`text-[#FFFFFF] font-[700] text-[13px] tracking-[0.06em] py-[12px] px-[32px] rounded-[4px] transition-colors duration-200 font-inherit ${busy ? 'bg-[#A5CC7F] cursor-not-allowed' : 'bg-[#7CB342] hover:bg-[#558B2F] cursor-pointer'}`}
+          className={`text-[#FFFFFF] font-[700] text-[13px] tracking-[0.06em] py-[12px] px-[32px] rounded-[4px] transition-[background-color,transform] duration-150 ease-emil font-inherit ${busy ? 'bg-[#A5CC7F] cursor-not-allowed' : 'bg-[#7CB342] hover:bg-[#558B2F] cursor-pointer active:scale-[0.97]'}`}
         >
           {busy ? 'НАДСИЛАЄМО…' : 'НАДІСЛАТИ ЗАЯВКУ →'}
         </button>
@@ -136,9 +136,9 @@ export default function Contacts() {
           </p>
         </div>
 
-        <div className="grid grid-cols-[1.2fr_1fr] max-[900px]:grid-cols-1 gap-[48px]">
+        <div className="grid grid-cols-[1.2fr_1fr] max-[900px]:grid-cols-1 gap-[48px] items-stretch">
           
-          <div className="bg-[#FFFFFF] border border-[#DDDDDD] rounded-[8px] px-[48px] py-[40px] max-[900px]:px-[24px] max-[900px]:py-[28px] shadow-[0_2px_8px_rgba(0,0,0,0.04)]">
+          <div className="bg-[#FFFFFF] border border-[#DDDDDD] rounded-[8px] px-[48px] py-[40px] max-[900px]:px-[24px] max-[900px]:py-[28px] shadow-[0_2px_8px_rgba(0,0,0,0.04)] h-full flex flex-col justify-center">
             <div className="mb-[28px]">
               <h3 className="text-[22px] font-[700] text-[#1A1A1A] m-0 mb-[6px]">Розрахувати вартість</h3>
               <p className="text-[13px] text-[#888888] m-0">
