@@ -41,16 +41,16 @@ export default function PartnersGrid() {
       className="bg-[#F5F7F5] px-[64px] py-[80px] border-t border-[#DDDDDD]"
     >
       <div className="max-w-[1200px] mx-auto">
-        <div className="text-center mb-[48px]">
-          <h2 className="text-[clamp(24px,3vw,36px)] font-[800] text-[#1A1A1A] m-0 heading-underline-center">
-            Наші Партнери
+        <div className="mb-[64px] text-right">
+          <h2 className="font-['Archivo',sans-serif] text-[clamp(32px,4vw,54px)] font-[800] text-[#0A0A0A] leading-[1.1] tracking-[-0.02em] mb-[24px]">
+            Наші партнери
           </h2>
-          <p className="mt-[16px] text-[15px] text-[#555555] m-0">
+          <p className="font-mono text-[14px] text-[#888888] leading-[1.7] max-w-2xl ml-auto">
             Компанії, довіра яких — наша величезна перемога.
           </p>
         </div>
 
-        <div className="grid grid-cols-6 max-[900px]:grid-cols-4 max-[600px]:grid-cols-3 gap-[1px] bg-[#DDDDDD] border border-[#DDDDDD]">
+        <div className="grid grid-cols-6 max-[900px]:grid-cols-4 max-[600px]:grid-cols-3 gap-4">
           {Array.from({ length: NUM_PARTNERS }).map((_, index) => {
             const isLast = index === NUM_PARTNERS - 1;
 
@@ -58,30 +58,31 @@ export default function PartnersGrid() {
               <div
                 key={index}
                 ref={(el) => { cellRefs.current[index] = el; }}
-                className={`flex items-center justify-center px-[20px] py-[28px] h-[110px] bg-[#FFFFFF] hover:bg-[#F1F8E9] transition-colors duration-200 group ${isLast ? 'cursor-pointer' : 'cursor-default'}`}
               >
-                {isLast ? (
-                  <a
-                    href="#contacts"
-                    onClick={(e) => {
-                      e.preventDefault();
-                      document.getElementById('contacts')?.scrollIntoView({ behavior: 'smooth' });
-                    }}
-                    className="flex flex-col items-center justify-center no-underline w-full h-full"
-                  >
-                    <span className="text-[28px] font-[900] text-[#7CB342] leading-[1]">?</span>
-                    <span className="text-[11px] font-[700] text-[#7CB342] mt-[4px] uppercase tracking-[0.06em]">Можливо Ви</span>
-                  </a>
-                ) : (
-                  <img
-                    src={getLogoUrl(index)}
-                    alt={`Партнер ${index + 1}`}
-                    className="max-w-[110px] max-h-[55px] object-contain grayscale-[0.4] opacity-85 transition-all duration-[250ms] ease-out group-hover:grayscale-0 group-hover:opacity-100"
-                    onError={(e) => {
-                      (e.currentTarget as HTMLImageElement).style.display = 'none';
-                    }}
-                  />
-                )}
+                <div className={`flex items-center justify-center px-5 py-7 h-[110px] bg-white rounded-lg shadow-sm transition-all duration-300 ease-out group hover:shadow-md hover:-translate-y-1 ${isLast ? 'cursor-pointer' : 'cursor-default'} w-full`}>
+                  {isLast ? (
+                    <a
+                      href="#contacts"
+                      onClick={(e) => {
+                        e.preventDefault();
+                        document.getElementById('contacts')?.scrollIntoView({ behavior: 'smooth' });
+                      }}
+                      className="flex flex-col items-center justify-center no-underline w-full h-full"
+                    >
+                      <span className="text-[28px] font-[900] text-[#7CB342] leading-[1]">?</span>
+                      <span className="text-[11px] font-[700] text-[#7CB342] mt-[4px] uppercase tracking-[0.06em]">Можливо Ви</span>
+                    </a>
+                  ) : (
+                    <img
+                      src={getLogoUrl(index)}
+                      alt={`Партнер ${index + 1}`}
+                      className="max-w-[110px] max-h-[55px] object-contain grayscale opacity-85 transition-all duration-300 ease-out group-hover:grayscale-0 group-hover:opacity-100"
+                      onError={(e) => {
+                        (e.currentTarget as HTMLImageElement).style.display = 'none';
+                      }}
+                    />
+                  )}
+                </div>
               </div>
             );
           })}

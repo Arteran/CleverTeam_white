@@ -138,7 +138,7 @@ export default function Footer() {
                       { label: 'Instagram',short: 'IG',    href: CONTACT.instagram },
                     ].map(s => (
                       <a key={s.short} href={s.href} target="_blank" rel="noopener noreferrer" title={s.label}
-                        className="text-[12px] font-[600] text-[#BBBBBB] hover:text-[#8DC63F] border border-[#333333] hover:border-[#8DC63F] rounded-[4px] px-[12px] py-[5px] no-underline transition-all duration-200 bg-[rgba(255,255,255,0.02)]"
+                        className="text-[12px] font-[600] text-[#BBBBBB] hover:text-[#8DC63F] border border-[#333333] hover:border-[#8DC63F] rounded-[4px] px-[12px] py-[5px] no-underline transition-all duration-200 bg-[rgba(255,255,255,0.02)] active:scale-[0.95]"
                       >{s.short}</a>
                     ))}
                   </div>

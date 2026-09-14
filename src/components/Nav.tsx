@@ -68,7 +68,7 @@ export default function Nav() {
       top:    targetRect.top  - containerRect.top  - 5,
     });
 
-    Flip.from(state, { duration: 0.35, ease: 'power3.inOut', absolute: true });
+    Flip.from(state, { duration: 0.25, ease: 'power3.out', absolute: true });
   }, []);
 
   const displayHref = hoverHref ?? activeHref;
@@ -77,21 +77,34 @@ export default function Nav() {
     if (displayHref) movePill(displayHref);
   }, [displayHref, movePill]);
 
+  useEffect(() => {
+    if (menuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [menuOpen]);
+
   const scrollTo = (href: string) => {
+    document.body.style.overflow = '';
     setMenuOpen(false);
-    gsap.to(window, { scrollTo: { y: href, offsetY: 72 }, duration: 0.9, ease: 'power3.inOut' });
+    gsap.to(window, { scrollTo: { y: href, offsetY: 72 }, duration: 0.5, ease: 'power3.out' });
   };
 
   return (
+    <>
     <nav
-      className={`sticky top-0 w-full z-50 bg-[#FFFFFF] border-b border-[#DDDDDD] transition-shadow duration-300 ${scrolled ? 'shadow-[0_2px_12px_rgba(0,0,0,0.08)]' : 'shadow-none'}`}
+      className={`sticky top-0 w-full z-50 bg-[#FFFFFF]/85 backdrop-blur-xl border-b border-[#DDDDDD] transition-shadow duration-200 ease-emil ${scrolled ? 'shadow-[0_2px_12px_rgba(0,0,0,0.08)]' : 'shadow-none'}`}
     >
       <div className="flex items-center justify-between px-8 md:px-12 h-[72px] max-w-[1400px] mx-auto">
 
         <a
           href="#"
           onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
-          className="flex items-center gap-3 no-underline outline-none"
+          className="flex items-center gap-3 no-underline outline-none active:scale-[0.97] transition-transform duration-150 ease-emil"
         >
           <div className="grid grid-cols-2 grid-rows-2 gap-[3px] w-[34px] h-[34px] shrink-0">
             <div className="rounded-[50%_50%_0_50%] bg-[#8DC63F]" />
@@ -111,7 +124,7 @@ export default function Nav() {
         <div ref={containerRef} className="relative hidden md:flex items-center gap-8">
           <div
             ref={pillRef}
-            className={`absolute pointer-events-none rounded-[4px] transition-opacity duration-200 bg-[#F4F9EE] border border-[#B8E085] ${displayHref ? 'opacity-100' : 'opacity-0'}`}
+            className={`absolute pointer-events-none rounded-[4px] transition-opacity duration-150 ease-emil bg-[#F4F9EE] border border-[#B8E085] ${displayHref ? 'opacity-100' : 'opacity-0'}`}
           />
 
           {NAV_LINKS.map((link) => {
@@ -122,7 +135,7 @@ export default function Nav() {
                 href={link.href}
                 ref={(el) => { linkRefs.current[link.href] = el; }}
                 onClick={(e) => { e.preventDefault(); scrollTo(link.href); }}
-                className={`font-['Inter',sans-serif] font-[800] text-[12px] tracking-[0.05em] uppercase relative z-1 px-[12px] py-[6px] transition-colors duration-200 no-underline ${isActive ? 'text-[#0A0A0A]' : 'text-[#555555]'}`}
+                className={`font-['Inter',sans-serif] font-[600] text-[14px] relative z-1 px-[12px] py-[6px] transition-[color,transform] duration-150 ease-emil active:scale-[0.97] no-underline ${isActive ? 'text-[#0A0A0A]' : 'text-[#555555]'}`}
                 onMouseEnter={() => setHoverHref(link.href)}
                 onMouseLeave={() => setHoverHref(null)}
               >
@@ -139,7 +152,7 @@ export default function Nav() {
               <button
                 key={lang}
                 onClick={() => setLanguage(lang)}
-                className={`font-['Inter',sans-serif] text-[12px] bg-transparent border-none cursor-pointer p-0 transition-colors duration-200 ${language === lang ? 'font-[800] text-[#8DC63F]' : 'font-[500] text-[#888888]'}`}
+                className={`font-['Inter',sans-serif] text-[12px] bg-transparent border-none cursor-pointer p-0 transition-colors duration-150 ease-emil active:scale-[0.97] ${language === lang ? 'font-[800] text-[#8DC63F]' : 'font-[500] text-[#888888]'}`}
               >
                 {lang}
               </button>
@@ -147,14 +160,14 @@ export default function Nav() {
           </div>
 
           <button
-            className="md:hidden flex flex-col justify-center gap-[5px] w-8 h-8 bg-transparent border-none cursor-pointer p-0"
+            className="md:hidden flex flex-col justify-center gap-[5px] w-8 h-8 bg-transparent border-none cursor-pointer p-0 active:scale-[0.97] transition-transform duration-150 ease-emil"
             onClick={() => setMenuOpen((o) => !o)}
             aria-label="Меню"
           >
             {[0, 1, 2].map((i) => (
               <span
                 key={i}
-                className={`block h-[2px] rounded-[2px] bg-[#1A1A1A] transition-all duration-[250ms] ease-out ${i === 1 ? (menuOpen ? 'w-full opacity-0' : 'w-[70%] opacity-100') : 'w-full'} ${i === 0 && menuOpen ? 'translate-y-[7px] rotate-45' : i === 2 && menuOpen ? '-translate-y-[7px] -rotate-45' : 'transform-none'}`}
+                className={`block h-[2px] rounded-[2px] bg-[#1A1A1A] transition-[transform,opacity,width] duration-200 ease-emil ${i === 1 ? (menuOpen ? 'w-full opacity-0' : 'w-[70%] opacity-100') : 'w-full'} ${i === 0 && menuOpen ? 'translate-y-[7px] rotate-45' : i === 2 && menuOpen ? '-translate-y-[7px] -rotate-45' : 'transform-none'}`}
               />
             ))}
           </button>
@@ -162,8 +175,8 @@ export default function Nav() {
       </div>
 
       {menuOpen && (
-        <div className="border-t border-[#EEEEEE] bg-[#FFFFFF] py-[12px]">
-          {NAV_LINKS.map((link) => (
+          <div className="absolute top-[72px] left-0 w-full border-t border-[#EEEEEE] bg-[#FFFFFF] py-[12px] origin-top transition-[opacity,transform] duration-200 ease-emil starting:opacity-0 starting:scale-95 z-50 shadow-lg">
+            {NAV_LINKS.map((link) => (
             <a
               key={link.href}
               href={link.href}
@@ -187,5 +200,12 @@ export default function Nav() {
         </div>
       )}
     </nav>
+    {menuOpen && (
+      <div
+        className="fixed inset-0 top-[72px] bg-black/5 backdrop-blur-md z-40"
+        onClick={() => setMenuOpen(false)}
+      />
+    )}
+    </>
   );
 }

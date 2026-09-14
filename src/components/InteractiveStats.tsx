@@ -32,7 +32,7 @@ export function InteractiveStats() {
             </span>
             <span className="text-[clamp(30px,4vw,60px)] font-[500] text-[#8DC63F]">+</span>
           </div>
-          <p className="m-0 mt-[24px] text-[11px] font-mono text-[#666666] tracking-[0.2em] uppercase">
+          <p className="m-0 mt-[24px] text-[15px] font-['Inter',sans-serif] text-[#E0E0E0]">
             Клієнтів вибрало нас
           </p>
         </div>
@@ -50,7 +50,7 @@ export function InteractiveStats() {
             </span>
             <span className="text-[clamp(40px,5vw,80px)] font-[500] text-[#8DC63F] ml-[4px]">k</span>
           </div>
-          <p className="m-0 mt-[24px] text-[11px] font-mono text-[#666666] tracking-[0.2em] uppercase">
+          <p className="m-0 mt-[24px] text-[15px] font-['Inter',sans-serif] text-[#E0E0E0]">
             Перевезених контейнерів
           </p>
         </div>
@@ -68,7 +68,7 @@ export function InteractiveStats() {
             </span>
             <span className="text-[clamp(30px,4vw,60px)] font-[500] text-[#8DC63F]">+</span>
           </div>
-          <p className="m-0 mt-[24px] text-[11px] font-mono text-[#666666] tracking-[0.2em] uppercase">
+          <p className="m-0 mt-[24px] text-[15px] font-['Inter',sans-serif] text-[#E0E0E0]">
             Вантажів розмитнено
           </p>
         </div>
