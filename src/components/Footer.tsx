@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { CONTACT } from '../data/constants';
+import { CleverTeamLogo } from './ui/CleverTeamLogo';
 
 export default function Footer() {
   const [footerHeight, setFooterHeight] = useState(0);
@@ -46,12 +47,7 @@ export default function Footer() {
             
             <div>
               <div className="flex items-center gap-[10px] mb-[16px]">
-                <div className="grid grid-cols-2 grid-rows-2 gap-[3px] w-[32px] h-[32px]">
-                  <div className="rounded-tl-[50%] rounded-tr-[50%] rounded-br-[0] rounded-bl-[50%] bg-[#8DC63F]" />
-                  <div className="rounded-tl-[50%] rounded-tr-[50%] rounded-br-[50%] rounded-bl-[0] bg-[#7CB342]" />
-                  <div className="rounded-tl-[50%] rounded-tr-[0] rounded-br-[50%] rounded-bl-[50%] bg-[#AED581]" />
-                  <div className="rounded-tl-[0] rounded-tr-[50%] rounded-br-[50%] rounded-bl-[50%] bg-[#7CB342]" />
-                </div>
+                  <CleverTeamLogo className="w-[36px] h-[36px] shrink-0" />
                 <span className="font-[900] text-[18px] text-[#FFFFFF] tracking-[0.06em]">
                   CLEVER TEAM
                 </span>

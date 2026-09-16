@@ -3,6 +3,7 @@ import { gsap } from 'gsap';
 import { Flip } from 'gsap/Flip';
 import { ScrollToPlugin } from 'gsap/ScrollToPlugin';
 import { useUI } from '../context/UIContext';
+import { CleverTeamLogo } from './ui/CleverTeamLogo';
 
 gsap.registerPlugin(Flip, ScrollToPlugin);
 
@@ -106,12 +107,7 @@ export default function Nav() {
           onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
           className="flex items-center gap-3 no-underline outline-none active:scale-[0.97] transition-transform duration-150 ease-emil"
         >
-          <div className="grid grid-cols-2 grid-rows-2 gap-[3px] w-[34px] h-[34px] shrink-0">
-            <div className="rounded-[50%_50%_0_50%] bg-[#8DC63F]" />
-            <div className="rounded-[50%_50%_50%_0] bg-[#7CB342]" />
-            <div className="rounded-[50%_0_50%_50%] bg-[#AED581]" />
-            <div className="rounded-[0_50%_50%_50%] bg-[#7CB342]" />
-          </div>
+          <CleverTeamLogo className="w-[36px] h-[36px] shrink-0" />
 
           <div className="flex flex-col leading-none font-['Archivo',sans-serif]">
             <span className="font-[900] text-[20px] tracking-[-0.02em]">
